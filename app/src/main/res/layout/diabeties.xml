@@ -1,0 +1,130 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Gender -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gender"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+
+    <EditText
+        android:id="@+id/gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter the value"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Hypertension -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hypertension"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+
+    <EditText
+        android:id="@+id/hypertension"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter the value"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Heart Disease -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Heart Disease"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+
+    <EditText
+        android:id="@+id/heart_disease"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter the value"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Smoking History -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Smoking History"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+
+    <EditText
+        android:id="@+id/smoking_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter the value"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="8dp" />
+
+    <!-- BMI -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BMI"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+
+    <EditText
+        android:id="@+id/bmi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter the value"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="8dp" />
+
+    <!-- HbA1c Level -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HbA1c Level"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+
+    <EditText
+        android:id="@+id/HbA1c_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter the value"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Blood Glucose Level -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blood Glucose Level"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+
+    <EditText
+        android:id="@+id/blood_glucose_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter the value"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Predict Button -->
+    <Button
+        android:id="@+id/btn_predict"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Predict"
+        android:layout_gravity="center"
+        android:padding="12dp"
+        android:textSize="16sp"/>
+
+</LinearLayout>
