@@ -11,15 +11,32 @@
         android:layout_height="wrap_content"
         android:text="Gender"
         android:textSize="16sp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="4dp" />
+
+    <Spinner
+        android:id="@+id/genderSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age"
+        android:textSize="16sp"
         android:layout_marginBottom="4dp" />
 
     <EditText
-        android:id="@+id/gender"
+        android:id="@+id/age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter the value"
+        android:hint="Enter your age"
         android:inputType="textPersonName"
         android:layout_marginBottom="8dp" />
+
+
 
     <!-- Hypertension -->
     <TextView
@@ -61,13 +78,13 @@
         android:textSize="16sp"
         android:layout_marginBottom="4dp" />
 
-    <EditText
-        android:id="@+id/smoking_history"
+    <Spinner
+        android:id="@+id/smokingHistorySpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter the value"
-        android:inputType="textPersonName"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="8dp"
+        />
+
 
     <!-- BMI -->
     <TextView
