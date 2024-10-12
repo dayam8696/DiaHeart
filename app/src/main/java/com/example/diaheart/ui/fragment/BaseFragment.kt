@@ -18,7 +18,7 @@ import com.example.diaheart.databinding.BaseFragmentBinding
         return binding.root
     }
 
-    fun showToast(string: String) {
+    fun  showToast(string: String) {
         Toast.makeText(requireContext(), string, Toast.LENGTH_SHORT).show()
     }
 }
