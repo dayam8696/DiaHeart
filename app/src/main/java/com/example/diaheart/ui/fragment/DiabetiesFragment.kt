@@ -69,85 +69,96 @@ class DiabetiesFragment : BaseFragment() {
                 return // Return early if validation fails
             }
 
-            // Collect inputs from user
+            // Collect string inputs from user
             val genderString = binding.genderSpinner.selectedItem.toString()  // Collect gender as a string
-            val genderNumeric = if (genderString == "Male") 1 else 0  // Convert gender to numeric value: 1 for Male, 0 for Female
-
-            val age = binding.age.text.toString().toInt()  // Age as Integer
-            val hypertension = binding.hypertension.text.toString().toInt()  // Hypertension as Integer
-            val heartDisease = binding.heartDisease.text.toString().toInt()  // Heart Disease as Integer
-
             val smokingHistoryString = binding.smokingHistorySpinner.selectedItem.toString()  // Collect smoking history as a string
-            val smokingHistoryNumeric = when (smokingHistoryString) {  // Convert smoking history to numeric value
-                "Never" -> 0
-                "Current" -> 1
-                "Former" -> 2
-                else -> 0
+
+            // One-Hot Encoding for gender (2 categories)
+            val genderOneHot = when (genderString) {
+                "Male" -> floatArrayOf(1.0f, 0.0f)
+                "Female" -> floatArrayOf(0.0f, 1.0f)
+                else -> floatArrayOf(0.0f, 0.0f)  // Handle unknown case if needed
             }
 
+            // One-Hot Encoding for smoking history (3 categories)
+            val smokingHistoryOneHot = when (smokingHistoryString) {
+                "Never" -> floatArrayOf(1.0f, 0.0f, 0.0f)
+                "Current" -> floatArrayOf(0.0f, 1.0f, 0.0f)
+                "Former" -> floatArrayOf(0.0f, 0.0f, 1.0f)
+                else -> floatArrayOf(0.0f, 0.0f, 0.0f)  // Handle unknown case if needed
+            }
+
+            // Collect numeric inputs
+            val age = binding.age.text.toString().toFloat()  // Age as Float
+            val hypertension = binding.hypertension.text.toString().toFloat()  // Hypertension as Float
+            val heartDisease = binding.heartDisease.text.toString().toFloat()  // Heart Disease as Float
             val bmi = binding.bmi.text.toString().toFloat()  // BMI as Float
             val HbA1cLevel = binding.HbA1cLevel.text.toString().toFloat()  // HbA1c Level as Float
-            val bloodGlucoseLevel = binding.bloodGlucoseLevel.text.toString().toInt()  // Glucose Level as Integer
+            val bloodGlucoseLevel = binding.bloodGlucoseLevel.text.toString().toFloat()  // Glucose Level as Float
 
-            // Debugging values before passing to the model
-            Log.d("DiabetiesFragment", "Gender: $genderString, Age: $age, Hypertension: $hypertension, Heart Disease: $heartDisease, Smoking: $smokingHistoryString, BMI: $bmi, HbA1c: $HbA1cLevel, Glucose: $bloodGlucoseLevel")
+            // Log the collected values, including glucose
+            Log.d("DiabetiesFragment", "Gender One-Hot: ${genderOneHot.contentToString()}")
+            Log.d("DiabetiesFragment", "Smoking History One-Hot: ${smokingHistoryOneHot.contentToString()}")
+            Log.d("DiabetiesFragment", "Age: $age, Hypertension: $hypertension, Heart Disease: $heartDisease")
+            Log.d("DiabetiesFragment", "BMI: $bmi, HbA1c Level: $HbA1cLevel, Glucose Level: $bloodGlucoseLevel")
 
-            // Correct ByteBuffer allocation (7 features * 4 bytes for each float)
-            val bufferSize = 7 * 4
-            Log.d("DiabetiesFragment", "Allocating ByteBuffer of size: $bufferSize bytes")
-
-            val byteBuffer = ByteBuffer.allocateDirect(bufferSize) // Ensure buffer is large enough
+            // The model expects 8 features in total:
+            // 2 for gender, 3 for smoking history, and 3 other numeric inputs
+            val bufferSize = 8 * 4  // Each float takes 4 bytes
+            val byteBuffer = ByteBuffer.allocateDirect(bufferSize)
             byteBuffer.order(ByteOrder.nativeOrder())
 
-            // Pack data into ByteBuffer
-            byteBuffer.putFloat(genderNumeric.toFloat())  // Gender as float (numeric representation)
-            byteBuffer.putFloat(age.toFloat())  // Age as float (convert from int to float)
-            byteBuffer.putFloat(hypertension.toFloat())  // Hypertension as float (convert from int to float)
-            byteBuffer.putFloat(heartDisease.toFloat())  // Heart Disease as float (convert from int to float)
-            byteBuffer.putFloat(smokingHistoryNumeric.toFloat())  // Smoking history as float (numeric representation)
-            byteBuffer.putFloat(bmi)  // BMI as float
-            byteBuffer.putFloat(HbA1cLevel)  // HbA1c Level as float
-            byteBuffer.putFloat(bloodGlucoseLevel.toFloat())  // Glucose level as float (convert from int to float)
+            // Pack One-Hot Encoded Gender
+            byteBuffer.putFloat(genderOneHot[0])
+            byteBuffer.putFloat(genderOneHot[1])
 
-            Log.d("DiabetiesFragment", "ByteBuffer prepared successfully. Remaining capacity: ${byteBuffer.remaining()} bytes")
+            // Pack One-Hot Encoded Smoking History
+            byteBuffer.putFloat(smokingHistoryOneHot[0])
+            byteBuffer.putFloat(smokingHistoryOneHot[1])
+            byteBuffer.putFloat(smokingHistoryOneHot[2])
 
-            // Run the TensorFlow Lite model
+            // Pack other features (age, hypertension, heart disease, BMI, HbA1c Level, glucose level)
+            byteBuffer.putFloat(age)
+            byteBuffer.putFloat(bmi)  // BMI
+            byteBuffer.putFloat(bloodGlucoseLevel)  // Glucose Level
+
+            // Debugging: log buffer size and remaining capacity
+            Log.d("DiabetiesFragment", "ByteBuffer size: $bufferSize bytes. Remaining capacity: ${byteBuffer.remaining()}")
+
+            // Load the TensorFlow Lite model
             val model = Model.newInstance(requireContext())
-            Log.d("DiabetiesFragment", "Model loaded successfully")
 
-            // Create input buffer
-            val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 7), DataType.FLOAT32)
+            // Prepare input feature with shape (1, 8) for the model
+            val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 8), DataType.FLOAT32)
             inputFeature0.loadBuffer(byteBuffer)
-            Log.d("DiabetiesFragment", "Input feature created successfully")
 
             // Run model inference
             val outputs = model.process(inputFeature0)
-            Log.d("DiabetiesFragment", "Model processed successfully")
-
             val outputFeature0 = outputs.outputFeature0AsTensorBuffer
 
-            // Get prediction result (assuming the output is a single float value 0 or 1)
+            // Get prediction result (assuming the output is a single float value)
             val prediction = outputFeature0.floatArray[0]
-            Log.d("DiabetiesFragment", "Prediction received: $prediction")
 
-            // Interpret the result and show a toast
+            // Log the prediction value
+            Log.d("DiabetiesFragment", "Prediction result: $prediction")
+
+            // Show the prediction result in a toast
             val predictionText = if (prediction >= 0.5f) {
                 "Yes, you may have diabetes"
             } else {
                 "No, you do not have diabetes"
             }
-
-            // Show the prediction result in a toast
             showToast(predictionText)
-            Log.d("DiabetiesFragment", "Prediction displayed")
 
-            // Release the model resources
+            // Close model resources
             model.close()
+
         } catch (e: Exception) {
             Log.e("DiabetiesFragment", "Error during model inference", e)
             showToast("Error running prediction")
         }
     }
+
 
     // Function to display toast messages
 //    fun showToast(message: String) {
