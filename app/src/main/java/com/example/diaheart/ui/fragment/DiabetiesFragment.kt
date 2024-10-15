@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
+import com.example.diaheart.R
 import com.example.diaheart.databinding.DiabetiesBinding
 import com.example.diaheart.ml.Model
 import org.tensorflow.lite.DataType
@@ -39,6 +41,7 @@ class DiabetiesFragment : BaseFragment() {
         binding.btnPredict.setOnClickListener {
             Log.d("DiabetiesFragment", "Button clicked") // Debug Log
             inputTaken() // Call inputTaken to predict
+            findNavController().navigate(R.id.action_diabeties_to_diabetiesResultScreen)
         }
 
         // Gender Spinner setup
@@ -142,13 +145,16 @@ class DiabetiesFragment : BaseFragment() {
             // Log the prediction value
             Log.d("DiabetiesFragment", "Prediction result: $prediction")
 
-            // Show the prediction result in a toast
-            val predictionText = if (prediction >= 0.5f) {
-                "Yes, you may have diabetes"
-            } else {
-                "No, you do not have diabetes"
-            }
+// Convert the prediction to a percentage
+            val predictionPercentage = (prediction * 100).toInt()
+
+// Show the prediction result as a percentage in a toast
+            val predictionText = "Your diabetes risk is $predictionPercentage%"
+            diaResult.percentage = predictionText
+
+// Display the percentage as a toast message
             showToast(predictionText)
+
 
             // Close model resources
             model.close()
@@ -159,9 +165,8 @@ class DiabetiesFragment : BaseFragment() {
         }
     }
 
+    object diaResult {
+        var percentage = " "
+    }
 
-    // Function to display toast messages
-//    fun showToast(message: String) {
-//        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
-//    }
 }

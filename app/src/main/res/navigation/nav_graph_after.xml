@@ -17,5 +17,13 @@
         android:id="@+id/diabeties"
         android:name="com.example.diaheart.ui.fragment.DiabetiesFragment"
         android:label="Diabeties"
-        tools:layout="@layout/diabeties"/>
+        tools:layout="@layout/diabeties">
+        <action
+            android:id="@+id/action_diabeties_to_diabetiesResultScreen"
+            app:destination="@id/diabetiesResultScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/diabetiesResultScreen"
+        android:name="com.example.diaheart.ui.fragment.DiabetiesResultScreen"
+        android:label="DiabetiesResultScreen" />
 </navigation>
