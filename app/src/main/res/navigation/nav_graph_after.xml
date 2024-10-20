@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_homeFragment2_to_diabeties"
             app:destination="@id/diabeties" />
+        <action
+            android:id="@+id/action_homeFragment2_to_heartFragment"
+            app:destination="@id/heartFragment" />
     </fragment>
     <fragment
         android:id="@+id/diabeties"
@@ -25,5 +28,11 @@
     <fragment
         android:id="@+id/diabetiesResultScreen"
         android:name="com.example.diaheart.ui.fragment.DiabetiesResultScreen"
-        android:label="DiabetiesResultScreen" />
+        android:label="DiabetiesResultScreen"
+        tools:layout="@layout/diabetes_result_screen"/>
+    <fragment
+        android:id="@+id/heartFragment"
+        android:name="com.example.diaheart.ui.fragment.HeartFragment"
+        android:label="HeartFragment"
+        tools:layout="@layout/heart_attack"/>
 </navigation>

@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.Toast
+
 import androidx.navigation.fragment.findNavController
 import com.example.diaheart.R
 import com.example.diaheart.databinding.DiabetiesBinding

@@ -18,11 +18,15 @@ class HomeFragment :BaseFragment() {
         return binding.root
     }
 
-    override fun onViewStateRestored(savedInstanceState: Bundle?) {
-        super.onViewStateRestored(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         binding.btndiabetes.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment2_to_diabeties)
         }
+        binding.btnheart.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment2_to_heartFragment)
+        }
+
     }
 
 

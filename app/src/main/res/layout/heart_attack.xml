@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Age -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Age"
+            android:textSize="16sp"
+            android:layout_marginBottom="2dp" />
+
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Age"
+            android:inputType="number"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Sex -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sex"
+            android:textSize="16sp"
+            android:layout_marginBottom="2dp" />
+
+        <EditText
+            android:id="@+id/sex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Sex (1 = Male, 0 = Female)"
+            android:inputType="number"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Chest Pain Type -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chest Pain Type"
+            android:textSize="16sp"
+            android:layout_marginBottom="2dp" />
+
+        <EditText
+            android:id="@+id/cp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Chest Pain Type (0-3)"
+            android:inputType="number"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Resting Blood Pressure -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resting Blood Pressure"
+            android:textSize="16sp"
+            android:layout_marginBottom="2dp" />
+
+        <EditText
+            android:id="@+id/trtbps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Blood Pressure"
+            android:inputType="number"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Cholesterol -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cholesterol"
+            android:textSize="16sp"
+            android:layout_marginBottom="2dp" />
+
+        <EditText
+            android:id="@+id/chol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Cholesterol Level"
+            android:inputType="number"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Fasting Blood Sugar -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fasting Blood Sugar"
+            android:textSize="16sp"
+            android:layout_marginBottom="2dp" />
+
+        <EditText
+            android:id="@+id/fbs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Fasting Blood Sugar (1 = True, 0 = False)"
+            android:inputType="number"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Resting ECG -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resting ECG"
+            android:textSize="16sp"
+            android:layout_marginBottom="2dp" />
+
+        <EditText
+            android:id="@+id/restecg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Resting ECG (0-2)"
+            android:inputType="number"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Max Heart Rate -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Max Heart Rate"
+            android:textSize="16sp"
+            android:layout_marginBottom="2dp" />
+
+        <EditText
+            android:id="@+id/thalachh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Max Heart Rate"
+            android:inputType="number"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Exercise Induced Angina -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exercise Induced Angina"
+            android:textSize="16sp"
+            android:layout_marginBottom="2dp" />
+
+        <EditText
+            android:id="@+id/exng"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter (1 = Yes, 0 = No)"
+            android:inputType="number"
+            android:layout_marginBottom="6dp" />
+
+        <!-- ST Depression (oldpeak) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ST Depression (oldpeak)"
+            android:textSize="16sp"
+            android:layout_marginBottom="2dp" />
+
+        <EditText
+            android:id="@+id/oldpeak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter ST Depression Value"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Slope -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Slope"
+            android:textSize="16sp"
+            android:layout_marginBottom="2dp" />
+
+        <EditText
+            android:id="@+id/slp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Slope (0-2)"
+            android:inputType="number"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Number of Major Vessels -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number of Major Vessels"
+            android:textSize="16sp"
+            android:layout_marginBottom="2dp" />
+
+        <EditText
+            android:id="@+id/caa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Number of Major Vessels"
+            android:inputType="number"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Thalassemia -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thalassemia"
+            android:textSize="16sp"
+            android:layout_marginBottom="2dp" />
+
+        <EditText
+            android:id="@+id/thall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Thalassemia Value (0-3)"
+            android:inputType="number"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Predict Button -->
+        <Button
+            android:id="@+id/btn_predict"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Predict"
+            android:layout_gravity="center"
+            android:padding="12dp"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</ScrollView>
