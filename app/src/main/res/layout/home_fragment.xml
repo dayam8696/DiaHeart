@@ -4,87 +4,170 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
+    android:background="#E8F5FF"
     android:gravity="center"
-    android:orientation="horizontal"
-    android:padding="16dp">
+    android:orientation="vertical"
+    android:padding="24dp">
 
-    <!-- Card for Diabetes -->
-    <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
+    <!-- Grid Layout: Two Rows with Two Cards Each -->
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_margin="8dp"
-        android:background="#FFFFFF"
-        android:elevation="8dp"
-        app:cardCornerRadius="8dp">
+        android:orientation="vertical"
+        android:gravity="center">
 
+        <!-- Row 1: Diabetes and Heart Cards -->
         <LinearLayout
-            android:id="@+id/btndiabetes"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp"
+            android:gravity="center">
 
-            <!-- Icon for Diabetes -->
-            <ImageView
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_gravity="center"
-                android:contentDescription="Diabetes Icon"
-                android:src="@drawable/diabeties" />
+            <!-- Diabetes Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                android:elevation="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="#FFFFFF">
 
-            <!-- Name for Diabetes -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingTop="8dp"
-                android:text="Diabetes"
-                android:textColor="#000"
-                android:textSize="18sp" />
+                <LinearLayout
+                    android:id="@+id/btndiabetes"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp">
 
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:contentDescription="Diabetes Icon"
+                        android:src="@drawable/diabeties"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Diabetes"
+                        android:textColor="#FF6F00"
+                        android:textStyle="bold"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Heart Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                android:elevation="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:id="@+id/btnheart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:contentDescription="Heart Icon"
+                        android:src="@drawable/heart"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Heart"
+                        android:textColor="#D32F2F"
+                        android:textStyle="bold"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
-    <!-- Card for Heart -->
-    <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_margin="8dp"
-        android:background="#FFFFFF"
-        android:elevation="8dp"
-        app:cardCornerRadius="8dp">
-
+        <!-- Row 2: Read More Cards -->
         <LinearLayout
-            android:id="@+id/btnheart"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:orientation="horizontal"
+            android:gravity="center">
 
-            <!-- Icon for Heart -->
-            <ImageView
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_gravity="center"
-                android:contentDescription="Heart Icon"
-                android:src="@drawable/heart" />
+            <!-- Read More 1 Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                android:elevation="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="#FFFFFF">
 
-            <!-- Name for Heart -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingTop="8dp"
-                android:text="Heart"
-                android:textColor="#000"
-                android:textSize="18sp" />
+                <LinearLayout
+                    android:id="@+id/btnReadMore1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp">
 
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:contentDescription="Read More Icon"
+                        android:src="@drawable/diabeties"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Read More 1"
+                        android:textColor="#00796B"
+                        android:textStyle="bold"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Read More 2 Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                android:elevation="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:id="@+id/btnReadMore2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:contentDescription="Read More Icon"
+                        android:src="@drawable/heart"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Read More 2"
+                        android:textColor="#3F51B5"
+                        android:textStyle="bold"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
+    </LinearLayout>
 </LinearLayout>
