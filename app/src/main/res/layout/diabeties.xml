@@ -1,147 +1,179 @@
-<LinearLayout
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
 
-    <!-- Gender -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gender"
-        android:textSize="16sp"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="4dp" />
-
-    <Spinner
-        android:id="@+id/genderSpinner"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp" />
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
 
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diabetes Risk Prediction"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_blue_dark"
+            android:layout_marginBottom="16dp"
+            android:gravity="center" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Age"
-        android:textSize="16sp"
-        android:layout_marginBottom="4dp" />
+        <!-- Gender -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gender"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="8dp" />
 
-    <EditText
-        android:id="@+id/age"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter your age"
-        android:inputType="textPersonName"
-        android:layout_marginBottom="8dp" />
+        <Spinner
+            android:id="@+id/genderSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/btn_dropdown"
+            android:layout_marginBottom="16dp" />
 
+        <!-- Age -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Age"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="8dp" />
 
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your age"
+            android:inputType="number"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="16dp" />
 
-    <!-- Hypertension -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hypertension"
-        android:textSize="16sp"
-        android:layout_marginBottom="4dp" />
+        <!-- Hypertension -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hypertension (Yes=1, No=0)"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="8dp" />
 
-    <EditText
-        android:id="@+id/hypertension"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter the value"
-        android:inputType="textPersonName"
-        android:layout_marginBottom="8dp" />
+        <EditText
+            android:id="@+id/hypertension"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter 1 or 0"
+            android:inputType="number"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="16dp" />
 
-    <!-- Heart Disease -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Heart Disease"
-        android:textSize="16sp"
-        android:layout_marginBottom="4dp" />
+        <!-- Heart Disease -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Heart Disease (Yes=1, No=0)"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="8dp" />
 
-    <EditText
-        android:id="@+id/heart_disease"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter the value"
-        android:inputType="textPersonName"
-        android:layout_marginBottom="8dp" />
+        <EditText
+            android:id="@+id/heart_disease"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter 1 or 0"
+            android:inputType="number"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="16dp" />
 
-    <!-- Smoking History -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Smoking History"
-        android:textSize="16sp"
-        android:layout_marginBottom="4dp" />
+        <!-- Smoking History -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Smoking History"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="8dp" />
 
-    <Spinner
-        android:id="@+id/smokingHistorySpinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        />
+        <Spinner
+            android:id="@+id/smokingHistorySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/btn_dropdown"
+            android:layout_marginBottom="16dp" />
 
+        <!-- BMI -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BMI"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="8dp" />
 
-    <!-- BMI -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BMI"
-        android:textSize="16sp"
-        android:layout_marginBottom="4dp" />
+        <EditText
+            android:id="@+id/bmi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your BMI"
+            android:inputType="numberDecimal"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="16dp" />
 
-    <EditText
-        android:id="@+id/bmi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter the value"
-        android:inputType="numberDecimal"
-        android:layout_marginBottom="8dp" />
+        <!-- HbA1c Level -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HbA1c Level"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="8dp" />
 
-    <!-- HbA1c Level -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="HbA1c Level"
-        android:textSize="16sp"
-        android:layout_marginBottom="4dp" />
+        <EditText
+            android:id="@+id/HbA1c_level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter HbA1c Level"
+            android:inputType="numberDecimal"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="16dp" />
 
-    <EditText
-        android:id="@+id/HbA1c_level"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter the value"
-        android:inputType="numberDecimal"
-        android:layout_marginBottom="8dp" />
+        <!-- Blood Glucose Level -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Blood Glucose Level"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="8dp" />
 
-    <!-- Blood Glucose Level -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Blood Glucose Level"
-        android:textSize="16sp"
-        android:layout_marginBottom="4dp" />
+        <EditText
+            android:id="@+id/blood_glucose_level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Glucose Level"
+            android:inputType="numberDecimal"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="16dp" />
 
-    <EditText
-        android:id="@+id/blood_glucose_level"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter the value"
-        android:inputType="numberDecimal"
-        android:layout_marginBottom="16dp" />
+        <!-- Predict Button -->
+        <Button
+            android:id="@+id/btn_predict"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Predict"
+            android:textSize="18sp"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="24dp"
+            android:padding="12dp" />
 
-    <!-- Predict Button -->
-    <Button
-        android:id="@+id/btn_predict"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Predict"
-        android:layout_gravity="center"
-        android:padding="12dp"
-        android:textSize="16sp"/>
-
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

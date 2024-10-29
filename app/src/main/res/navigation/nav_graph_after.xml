@@ -29,10 +29,27 @@
         android:id="@+id/diabetiesResultScreen"
         android:name="com.example.diaheart.ui.fragment.DiabetiesResultScreen"
         android:label="DiabetiesResultScreen"
-        tools:layout="@layout/diabetes_result_screen"/>
+        tools:layout="@layout/diabetes_result_screen">
+        <action
+            android:id="@+id/action_diabetiesResultScreen_to_diabeties"
+            app:destination="@id/diabeties" />
+    </fragment>
     <fragment
         android:id="@+id/heartFragment"
         android:name="com.example.diaheart.ui.fragment.HeartFragment"
         android:label="HeartFragment"
-        tools:layout="@layout/heart_attack"/>
+        tools:layout="@layout/heart_attack">
+        <action
+            android:id="@+id/action_heartFragment_to_heartResultFragment"
+            app:destination="@id/heartResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/heartResultFragment"
+        android:name="com.example.diaheart.ui.fragment.HeartResultFragment"
+        android:label="HeartResultFragment"
+        tools:layout="@layout/heart_result_screen">
+        <action
+            android:id="@+id/action_heartResultFragment_to_heartFragment"
+            app:destination="@id/heartFragment" />
+    </fragment>
 </navigation>

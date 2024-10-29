@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
+import com.example.diaheart.R
 import com.example.diaheart.databinding.HeartAttackBinding
 import com.example.diaheart.ml.HeartAttackPredictionModel
 import org.tensorflow.lite.DataType
@@ -16,7 +18,7 @@ import java.nio.ByteOrder
 class HeartFragment : BaseFragment() {
 
     private val binding by lazy { HeartAttackBinding.inflate(layoutInflater) }
-    private val TAG = "HeartFragment" // Tag for logging
+    private val TAG = "HeartFragment"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,13 +31,13 @@ class HeartFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Set an onClickListener for the Predict button
         binding.btnPredict.setOnClickListener {
             try {
                 val inputs = getInputs() // Collect inputs from the user
                 logByteBuffer(inputs)    // Log ByteBuffer contents
                 val prediction = runModel(inputs) // Run the TFLite model
                 showPrediction(prediction) // Display the prediction result
+                findNavController().navigate(R.id.action_heartFragment_to_heartResultFragment)
             } catch (e: Exception) {
                 Toast.makeText(requireContext(), "Please enter valid inputs", Toast.LENGTH_SHORT).show()
                 Log.e(TAG, "Error: ${e.message}")
@@ -43,62 +45,56 @@ class HeartFragment : BaseFragment() {
         }
     }
 
-    // Collect inputs, log them, and convert them to ByteBuffer
+    // Collect inputs from user and convert them to ByteBuffer
     private fun getInputs(): ByteBuffer {
-        val byteBuffer = ByteBuffer.allocateDirect(4 * 22) // 22 * 4 bytes each
+        val byteBuffer = ByteBuffer.allocateDirect(4 * 13) // 13 features, 4 bytes each
         byteBuffer.order(ByteOrder.nativeOrder())
 
         try {
-            // Collect continuous features
+            // Collect all 13 required inputs as floats
             val age = binding.age.text.toString().toFloat()
+            val sex = binding.sex.text.toString().toFloat()
+            val cp = binding.cp.text.toString().toFloat()
             val trtbps = binding.trtbps.text.toString().toFloat()
             val chol = binding.chol.text.toString().toFloat()
+            val fbs = binding.fbs.text.toString().toFloat()
+            val restecg = binding.restecg.text.toString().toFloat()
             val thalachh = binding.thalachh.text.toString().toFloat()
+            val exng = binding.exng.text.toString().toFloat()
             val oldpeak = binding.oldpeak.text.toString().toFloat()
+            val slp = binding.slp.text.toString().toFloat()
+            val caa = binding.caa.text.toString().toFloat()
+            val thall = binding.thall.text.toString().toFloat()
 
-            // Collect categorical features
-            val sex_1 = if (binding.sex.text.toString().toInt() == 1) 1.0f else 0.0f
-            val exng_1 = if (binding.exng.text.toString().toInt() == 1) 1.0f else 0.0f
-            val fbs_1 = if (binding.fbs.text.toString().toInt() == 1) 1.0f else 0.0f
-
-            val cp_2 = if (binding.cp.text.toString().toInt() == 2) 1.0f else 0.0f
-            val cp_3 = if (binding.cp.text.toString().toInt() == 3) 1.0f else 0.0f
-
-            val restecg_1 = if (binding.restecg.text.toString().toInt() == 1) 1.0f else 0.0f
-            val restecg_2 = if (binding.restecg.text.toString().toInt() == 2) 1.0f else 0.0f
-
-            val slp_1 = if (binding.slp.text.toString().toInt() == 1) 1.0f else 0.0f
-            val slp_2 = if (binding.slp.text.toString().toInt() == 2) 1.0f else 0.0f
-
-            val caa_1 = if (binding.caa.text.toString().toInt() == 1) 1.0f else 0.0f
-            val caa_2 = if (binding.caa.text.toString().toInt() == 2) 1.0f else 0.0f
-            val caa_3 = if (binding.caa.text.toString().toInt() == 3) 1.0f else 0.0f
-
-            val thall_1 = if (binding.thall.text.toString().toInt() == 1) 1.0f else 0.0f
-            val thall_2 = if (binding.thall.text.toString().toInt() == 2) 1.0f else 0.0f
-            val thall_3 = if (binding.thall.text.toString().toInt() == 3) 1.0f else 0.0f
+            Log.d(TAG, "User Input Values:")
+            Log.d(TAG, "Age: $age")
+            Log.d(TAG, "Sex: $sex")
+            Log.d(TAG, "Chest Pain (cp): $cp")
+            Log.d(TAG, "Resting Blood Pressure (trtbps): $trtbps")
+            Log.d(TAG, "Cholesterol (chol): $chol")
+            Log.d(TAG, "Fasting Blood Sugar (fbs): $fbs")
+            Log.d(TAG, "Resting ECG (restecg): $restecg")
+            Log.d(TAG, "Max Heart Rate Achieved (thalachh): $thalachh")
+            Log.d(TAG, "Exercise Induced Angina (exng): $exng")
+            Log.d(TAG, "Oldpeak: $oldpeak")
+            Log.d(TAG, "Slope (slp): $slp")
+            Log.d(TAG, "Number of Major Vessels (caa): $caa")
+            Log.d(TAG, "Thallium Stress Test (thall): $thall")
 
             // Add inputs to ByteBuffer in the correct order
             byteBuffer.putFloat(age)
+            byteBuffer.putFloat(sex)
+            byteBuffer.putFloat(cp)
             byteBuffer.putFloat(trtbps)
             byteBuffer.putFloat(chol)
+            byteBuffer.putFloat(fbs)
+            byteBuffer.putFloat(restecg)
             byteBuffer.putFloat(thalachh)
+            byteBuffer.putFloat(exng)
             byteBuffer.putFloat(oldpeak)
-            byteBuffer.putFloat(sex_1)
-            byteBuffer.putFloat(exng_1)
-            byteBuffer.putFloat(fbs_1)
-            byteBuffer.putFloat(cp_2)
-            byteBuffer.putFloat(cp_3)
-            byteBuffer.putFloat(restecg_1)
-            byteBuffer.putFloat(restecg_2)
-            byteBuffer.putFloat(slp_1)
-            byteBuffer.putFloat(slp_2)
-            byteBuffer.putFloat(caa_1)
-            byteBuffer.putFloat(caa_2)
-            byteBuffer.putFloat(caa_3)
-            byteBuffer.putFloat(thall_1)
-            byteBuffer.putFloat(thall_2)
-            byteBuffer.putFloat(thall_3)
+            byteBuffer.putFloat(slp)
+            byteBuffer.putFloat(caa)
+            byteBuffer.putFloat(thall)
 
         } catch (e: NumberFormatException) {
             Log.e(TAG, "Invalid input: ${e.message}")
@@ -120,7 +116,7 @@ class HeartFragment : BaseFragment() {
     private fun runModel(byteBuffer: ByteBuffer): Float {
         val model = HeartAttackPredictionModel.newInstance(requireContext())
 
-        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 22), DataType.FLOAT32)
+        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 13), DataType.FLOAT32)
         inputFeature0.loadBuffer(byteBuffer)
 
         val outputs = model.process(inputFeature0)
@@ -134,9 +130,20 @@ class HeartFragment : BaseFragment() {
     }
 
     // Display the prediction result
+    // Display the prediction result as a percentage
     private fun showPrediction(prediction: Float) {
-        val result = if (prediction >= 0.5) "High risk of heart attack" else "Low risk of heart attack"
-        Log.d(TAG, "Prediction Value: $prediction")
+        // Convert the prediction to a percentage (0-100)
+        val percentage = prediction * 100
+        val result = String.format("Heart attack risk: %.2f%%", percentage)
+        HeartResult.percentage = result
+
+        Log.d(TAG, "Prediction Percentage: $result")
+
+        // Display the percentage result in a Toast
         Toast.makeText(requireContext(), result, Toast.LENGTH_LONG).show()
+    }
+
+    object HeartResult {
+        var percentage = " "
     }
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Label Style -->
+    <style name="InputLabel">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_marginBottom">6dp</item>
+    </style>
+
+    <!-- Input Field Style -->
+    <style name="InputField">
+        <item name="android:background">@android:drawable/edit_text</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+    </style>
+
+</resources>

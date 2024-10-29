@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Diabetes Risk Prediction"
+        android:text="Heart Attack Risk Prediction"
         android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
@@ -21,7 +21,7 @@
 
 
     <TextView
-        android:id="@+id/diabetesRiskValue"
+        android:id="@+id/heartAttackRiskValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0.00%"
@@ -31,7 +31,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="8dp" />
 
-    <!-- Button to allow the user to predict again -->
+    <!-- Button to Go Back or Predict Again -->
     <Button
         android:id="@+id/btnPredictAgain"
         android:layout_width="wrap_content"
@@ -43,4 +43,5 @@
         android:textColor="@android:color/white"
         android:padding="12dp"
         android:layout_marginBottom="16dp" />
+
 </LinearLayout>
