@@ -27,6 +27,17 @@ class HomeFragment :BaseFragment() {
             findNavController().navigate(R.id.action_homeFragment2_to_heartFragment)
         }
 
+
+        binding.btnReadMore1.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment2_to_parameterInfo)
+        }
+
+        binding.btnReadMore2.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment2_to_blogFragment)
+
+        }
+
+
     }
 
 

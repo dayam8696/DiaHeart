@@ -15,6 +15,12 @@
         <action
             android:id="@+id/action_homeFragment2_to_heartFragment"
             app:destination="@id/heartFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_parameterInfo"
+            app:destination="@id/parameterInfo" />
+        <action
+            android:id="@+id/action_homeFragment2_to_blogFragment"
+            app:destination="@id/blogFragment" />
     </fragment>
     <fragment
         android:id="@+id/diabeties"
@@ -52,4 +58,14 @@
             android:id="@+id/action_heartResultFragment_to_heartFragment"
             app:destination="@id/heartFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/parameterInfo"
+        android:name="com.example.diaheart.ui.fragment.ParameterInfo"
+        android:label="ParameterInfo"
+        tools:layout="@layout/parameter_info"/>
+    <fragment
+        android:id="@+id/blogFragment"
+        android:name="com.example.diaheart.ui.fragment.BlogFragment"
+        android:label="BlogFragment"
+        tools:layout="@layout/blog_fragment"/>
 </navigation>

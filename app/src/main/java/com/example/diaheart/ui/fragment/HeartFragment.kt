@@ -31,7 +31,7 @@ class HeartFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnPredict.setOnClickListener {
+        binding.submitButton.setOnClickListener {
             try {
                 val inputs = getInputs() // Collect inputs from the user
                 logByteBuffer(inputs)    // Log ByteBuffer contents
