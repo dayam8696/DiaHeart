@@ -30,6 +30,7 @@ class EmergencyDetailsFragment : BaseFragment() {
         // Set click listener for the Save button
         binding.btnSave.setOnClickListener {
             saveMobileNumber()
+
         }
 
         // Return the root view after all setup is complete

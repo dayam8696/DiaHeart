@@ -5,7 +5,6 @@ import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
 import android.telephony.SmsManager
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,15 +14,13 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import com.example.diaheart.R
 import com.example.diaheart.databinding.DiabetesResultScreenBinding
-import com.example.diaheart.utils.SharedPreferenceManager
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 
-class DiabetesResultScreen : BaseFragment() {
-    private lateinit var binding: DiabetesResultScreenBinding
-    private lateinit var sharedPreferenceManager: SharedPreferenceManager
+class DiabetiesResultScreenFragment : BaseFragment() {
 
-    private lateinit var emergencyContact: String
+    private val binding by lazy { DiabetesResultScreenBinding.inflate(layoutInflater) }
+    private val emergencyContact = "+918700960601" // Set the emergency contact directly here
     private val SMS_PERMISSION_REQUEST_CODE = 101
     private val LOCATION_PERMISSION_REQUEST_CODE = 102
     private lateinit var fusedLocationClient: FusedLocationProviderClient
@@ -33,23 +30,13 @@ class DiabetesResultScreen : BaseFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        // Initialize binding and SharedPreferenceManager
-        binding = DiabetesResultScreenBinding.inflate(inflater, container, false)
-        sharedPreferenceManager = SharedPreferenceManager(requireContext())
-
-        // Initialize the location client
+    ): View? {
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        // Retrieve emergency contact from SharedPreferences
-        emergencyContact = sharedPreferenceManager.getMobileNumber() ?: "+917068745820"
-        Log.d("DiabetesResultScreen", "Emergency Contact Number: $emergencyContact")
 
         // Display diabetes risk value
         binding.diabetesRiskValue.text = DiabetiesFragment.diaResult.percentage
@@ -61,13 +48,12 @@ class DiabetesResultScreen : BaseFragment() {
 
         // Emergency button functionality
         binding.btnEmergency.setOnClickListener {
-            Log.d("DiabetesResultScreen", "Emergency Contact Number: $emergencyContact")
+            Toast.makeText(requireContext(), "Sending SMS to $emergencyContact", Toast.LENGTH_SHORT).show()
             checkPermissionsAndSendEmergencyMessage()
         }
     }
 
     private fun checkPermissionsAndSendEmergencyMessage() {
-        // Check SMS and Location permissions
         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED ||
             ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
@@ -78,22 +64,15 @@ class DiabetesResultScreen : BaseFragment() {
                 SMS_PERMISSION_REQUEST_CODE
             )
         } else {
-            // Permissions are granted, send the SMS with location
+            // Permissions are granted, proceed with sending SMS
             getLastLocationAndSendSMS()
         }
     }
 
     private fun getLastLocationAndSendSMS() {
-        // Check if location permissions are granted
-        if (ActivityCompat.checkSelfPermission(
-                requireContext(),
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-                requireContext(),
-                Manifest.permission.ACCESS_COARSE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            // If permissions are missing, request them
+        if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+            ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
             ActivityCompat.requestPermissions(
                 requireActivity(),
                 arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION),
@@ -117,17 +96,18 @@ class DiabetesResultScreen : BaseFragment() {
         try {
             val smsManager = SmsManager.getDefault()
             val locationText = if (lastKnownLocation != null) {
-                "Latitude: ${lastKnownLocation!!.latitude}, Longitude: ${lastKnownLocation!!.longitude}"
+                "https://maps.google.com/?q=${lastKnownLocation!!.latitude},${lastKnownLocation!!.longitude}"
             } else {
                 "Location not available"
             }
             val message = "Emergency! I require assistance due to a potential medical risk. My location: $locationText"
             smsManager.sendTextMessage(emergencyContact, null, message, null, null)
-            Toast.makeText(requireContext(), "Emergency SMS sent!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Emergency SMS sent to $emergencyContact!", Toast.LENGTH_SHORT).show()
         } catch (e: Exception) {
             Toast.makeText(requireContext(), "Failed to send SMS: ${e.message}", Toast.LENGTH_LONG).show()
         }
     }
+
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -136,9 +116,9 @@ class DiabetesResultScreen : BaseFragment() {
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == SMS_PERMISSION_REQUEST_CODE) {
-            if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED &&
-                        grantResults[1] == PackageManager.PERMISSION_GRANTED)) {
-                // Permissions granted, proceed with sending SMS
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED &&
+                grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+
                 getLastLocationAndSendSMS()
             } else {
                 Toast.makeText(requireContext(), "SMS or location permission denied", Toast.LENGTH_SHORT).show()

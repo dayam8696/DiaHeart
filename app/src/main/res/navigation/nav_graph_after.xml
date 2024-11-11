@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/diabetiesResultScreen"
-        android:name="com.example.diaheart.ui.fragment.DiabetiesResultScreen"
+        android:name="com.example.diaheart.ui.fragment.DiabetiesResultScreenFragment"
         android:label="DiabetiesResultScreen"
         tools:layout="@layout/diabetes_result_screen">
         <action
