@@ -14,6 +14,16 @@
         android:text="Enter Emergency Contact No."
         android:textSize="18sp"
         android:textColor="#333333"
+        android:layout_marginBottom="8dp" />
+
+    <!-- TextView to Display Previously Saved Mobile Number -->
+    <TextView
+        android:id="@+id/tvSavedContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Previously saved contact: None"
+        android:textSize="16sp"
+        android:textColor="#666666"
         android:layout_marginBottom="16dp" />
 
     <!-- EditText for Mobile Number Input -->

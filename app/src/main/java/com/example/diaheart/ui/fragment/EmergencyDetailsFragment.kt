@@ -30,7 +30,6 @@ class EmergencyDetailsFragment : BaseFragment() {
         // Set click listener for the Save button
         binding.btnSave.setOnClickListener {
             saveMobileNumber()
-
         }
 
         // Return the root view after all setup is complete
@@ -42,18 +41,24 @@ class EmergencyDetailsFragment : BaseFragment() {
 
         if (mobileNumber.isNotEmpty()) {
             sharedPreferenceManager.saveMobileNumber(mobileNumber)
-            // Show confirmation toast
             Toast.makeText(requireContext(), "Mobile number saved!", Toast.LENGTH_LONG).show()
             Log.d("EmergencyDetailsFragment", "Mobile number saved: $mobileNumber")
+            // Update the saved contact TextView with the new number
+            binding.tvSavedContact.text = "Previously saved contact: $mobileNumber"
         } else {
-            // Show error toast
             Toast.makeText(requireContext(), "Please enter a mobile number", Toast.LENGTH_LONG).show()
         }
     }
 
-    // Method to load the mobile number using SharedPreferenceManager
     private fun loadMobileNumber() {
         val savedNumber = sharedPreferenceManager.getMobileNumber()
-        binding.etMobileNumber.setText(savedNumber)
+//        binding.etMobileNumber.setText(savedNumber)
+
+        // Set the saved contact in the TextView
+        if (savedNumber.isNullOrEmpty()) {
+            binding.tvSavedContact.text = "Previously saved contact: None"
+        } else {
+            binding.tvSavedContact.text = "Previously saved contact: $savedNumber"
+        }
     }
 }
