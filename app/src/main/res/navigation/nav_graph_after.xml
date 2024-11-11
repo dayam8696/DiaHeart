@@ -76,4 +76,9 @@
         android:name="com.example.diaheart.ui.fragment.EmergencyDetailsFragment"
         android:label="EmergencyDetailsFragment"
         tools:layout="@layout/emergency_details_fragment"/>
+    <fragment
+        android:id="@+id/nearByHospitalFragment"
+        android:name="com.example.diaheart.ui.fragment.NearByHospitalFragment"
+        android:label="NearByHospitalFragment"
+        tools:layout="@layout/near_by_hospital_fragment"/>
 </navigation>

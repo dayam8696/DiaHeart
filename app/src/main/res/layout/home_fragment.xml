@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,7 +6,7 @@
     android:background="#E8F5FF"
     android:padding="24dp">
 
-    <!-- Emergency Button in the Top-Right Corner -->
+    <!-- Emergency Button Positioned at the Top Center -->
     <Button
         android:id="@+id/btnEmergency"
         android:layout_width="wrap_content"
@@ -17,8 +16,8 @@
         android:backgroundTint="#FF0000"
         android:padding="8dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="8dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:elevation="8dp"
         android:textStyle="bold" />
 
@@ -28,7 +27,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:paddingTop="50dp"> <!-- Adjusted padding to avoid overlap with Emergency Button -->
+        android:paddingTop="100dp"> <!-- Adjusted padding to avoid overlap with Emergency Button -->
 
         <!-- Grid Layout: Two Rows with Two Cards Each -->
         <LinearLayout
@@ -142,13 +141,13 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:contentDescription="Read More Icon"
-                            android:src="@drawable/diabeties"
+                            android:src="@drawable/para"
                             android:layout_marginBottom="8dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Read More 1"
+                            android:text="Parameters"
                             android:textColor="#00796B"
                             android:textStyle="bold"
                             android:textSize="16sp" />
@@ -176,20 +175,19 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:contentDescription="Read More Icon"
-                            android:src="@drawable/heart"
+                            android:src="@drawable/blog"
                             android:layout_marginBottom="8dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Read More 2"
+                            android:text="Blogs"
                             android:textColor="#3F51B5"
                             android:textStyle="bold"
                             android:textSize="16sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
-
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

@@ -1,235 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#F5F5F5"
-    android:fillViewport="true">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
 
-    <LinearLayout
+    <!-- Card 1: Know Your Diabetes Parameter -->
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_margin="16dp"
+        android:elevation="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="#FFFFFF">
 
-        <!-- Screen Title -->
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Parameter Information"
-            android:textColor="#37474F"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:paddingBottom="16dp" />
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center">
 
-        <!-- Age -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Age"
-            android:textColor="#546E7A"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="The age of the person in years. Age is a significant factor in assessing health risks as certain conditions become more prevalent with age."
-            android:textColor="#757575"
-            android:textSize="16sp"
-            android:layout_marginBottom="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Know Your Diabetes Parameter"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#FF6F00"
+                android:layout_gravity="center" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-        <!-- Sex -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sex"
-            android:textColor="#546E7A"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sex of the person, where 1 represents male and 0 represents female. Gender can impact health risk factors and susceptibility to certain diseases."
-            android:textColor="#757575"
-            android:textSize="16sp"
-            android:layout_marginBottom="12dp" />
+    <!-- Card 2: Know Your Heart Parameters -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:elevation="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="#FFFFFF">
 
-        <!-- Chest Pain Type -->
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Chest Pain Type"
-            android:textColor="#546E7A"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Type of chest pain experienced, with values ranging from 0 to 3. Different values represent different types of angina, with higher values potentially indicating a higher risk of heart conditions."
-            android:textColor="#757575"
-            android:textSize="16sp"
-            android:layout_marginBottom="12dp" />
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center">
 
-        <!-- Resting Blood Pressure -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Resting Blood Pressure"
-            android:textColor="#546E7A"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="The resting blood pressure (in mm Hg) when the person is at rest. High resting blood pressure can be an indicator of cardiovascular disease risk."
-            android:textColor="#757575"
-            android:textSize="16sp"
-            android:layout_marginBottom="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Know Your Heart Parameters"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#D32F2F"
+                android:layout_gravity="center" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-        <!-- Cholesterol -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cholesterol"
-            android:textColor="#546E7A"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="The person’s cholesterol level (in mg/dL). Higher cholesterol can increase the risk of heart disease and is an important parameter in health assessment."
-            android:textColor="#757575"
-            android:textSize="16sp"
-            android:layout_marginBottom="12dp" />
-
-        <!-- Fasting Blood Sugar -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fasting Blood Sugar"
-            android:textColor="#546E7A"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Whether the fasting blood sugar is over 120 mg/dL (1 = Yes, 0 = No). Elevated fasting blood sugar levels are often associated with diabetes or other metabolic conditions."
-            android:textColor="#757575"
-            android:textSize="16sp"
-            android:layout_marginBottom="12dp" />
-
-        <!-- Resting ECG -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Resting ECG"
-            android:textColor="#546E7A"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Results of the resting electrocardiogram, with values between 0 and 2. The ECG readings help detect abnormal heart patterns that might indicate heart disease."
-            android:textColor="#757575"
-            android:textSize="16sp"
-            android:layout_marginBottom="12dp" />
-
-        <!-- Max Heart Rate -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Max Heart Rate"
-            android:textColor="#546E7A"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="The maximum heart rate achieved during physical exertion. This value helps assess the cardiovascular response and endurance level."
-            android:textColor="#757575"
-            android:textSize="16sp"
-            android:layout_marginBottom="12dp" />
-
-        <!-- Exercise Induced Angina -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Exercise Induced Angina"
-            android:textColor="#546E7A"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Whether angina (chest pain) occurs during exercise (1 = Yes, 0 = No). This can indicate the presence of coronary artery disease."
-            android:textColor="#757575"
-            android:textSize="16sp"
-            android:layout_marginBottom="12dp" />
-
-        <!-- ST Depression (oldpeak) -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ST Depression (oldpeak)"
-            android:textColor="#546E7A"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ST depression induced by exercise, measured in mm. Higher values might suggest abnormal heart function."
-            android:textColor="#757575"
-            android:textSize="16sp"
-            android:layout_marginBottom="12dp" />
-
-        <!-- Slope -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Slope"
-            android:textColor="#546E7A"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="The slope of the peak exercise ST segment, with values from 0 to 2. Different slopes are associated with different levels of exercise-induced ischemia."
-            android:textColor="#757575"
-            android:textSize="16sp"
-            android:layout_marginBottom="12dp" />
-
-        <!-- Number of Major Vessels -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Number of Major Vessels"
-            android:textColor="#546E7A"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="The number of major blood vessels (0–3) that are visible on fluoroscopy. Fewer visible vessels may indicate higher risk."
-            android:textColor="#757575"
-            android:textSize="16sp"
-            android:layout_marginBottom="12dp" />
-
-        <!-- Thalassemia -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Thalassemia"
-            android:textColor="#546E7A"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Thalassemia type, with values from 0 to 3, indicating different levels of thalassemia. Higher values may indicate more severe forms of the disease."
-            android:textColor="#757575"
-            android:textSize="16sp"
-            android:layout_marginBottom="12dp" />
-
-    </LinearLayout>
-</ScrollView>
+</LinearLayout>

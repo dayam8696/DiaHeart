@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F5F5F5">
+
+    <!-- ScrollView to make content scrollable -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Vertical LinearLayout to display parameter explanations -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center">
+
+            <!-- Screen Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parameter Information"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#37474F"
+                android:layout_gravity="center"
+                android:paddingBottom="16dp" />
+
+            <!-- Age Parameter -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Age (Range: 0 - 120 years)"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#546E7A"
+                android:layout_marginTop="8dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The age of the person in years. Age is a significant factor in assessing health risks as certain conditions become more prevalent with age."
+                android:textSize="16sp"
+                android:textColor="#757575"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Gender Parameter -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender (1 = Male, 0 = Female)"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#546E7A"
+                android:layout_marginTop="8dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The gender of the person, where 1 represents male and 0 represents female. Gender can impact health risk factors and susceptibility to certain diseases."
+                android:textSize="16sp"
+                android:textColor="#757575"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Hypertension Parameter -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hypertension (1 = Yes, 0 = No)"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#546E7A"
+                android:layout_marginTop="8dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Indicates if the person has hypertension. Hypertension is a risk factor for diabetes and cardiovascular diseases."
+                android:textSize="16sp"
+                android:textColor="#757575"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Heart Disease Parameter -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Heart Disease (1 = Yes, 0 = No)"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#546E7A"
+                android:layout_marginTop="8dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Indicates if the person has heart disease. People with heart disease may be at higher risk for other conditions."
+                android:textSize="16sp"
+                android:textColor="#757575"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Smoking History Parameter -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Smoking History (1 = Yes, 0 = No)"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#546E7A"
+                android:layout_marginTop="8dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Indicates whether the person has a history of smoking. Smoking is a significant risk factor for many chronic diseases."
+                android:textSize="16sp"
+                android:textColor="#757575"
+                android:layout_marginBottom="12dp" />
+
+            <!-- BMI Parameter -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BMI (Range: 10 - 40)"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#546E7A"
+                android:layout_marginTop="8dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Body Mass Index (BMI), a measure of body fat based on height and weight. Higher BMI can indicate obesity, which is a risk factor for diabetes."
+                android:textSize="16sp"
+                android:textColor="#757575"
+                android:layout_marginBottom="12dp" />
+
+            <!-- HbA1c Level Parameter -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HbA1c Level (Range: 4.0% - 14.0%)"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#546E7A"
+                android:layout_marginTop="8dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The average blood sugar levels over the past 2-3 months. Higher HbA1c indicates a greater risk of diabetes."
+                android:textSize="16sp"
+                android:textColor="#757575"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Blood Glucose Level Parameter -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blood Glucose Level (Range: 70 - 200 mg/dL)"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#546E7A"
+                android:layout_marginTop="8dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current blood glucose level in mg/dL. Elevated glucose levels may indicate prediabetes or diabetes."
+                android:textSize="16sp"
+                android:textColor="#757575"
+                android:layout_marginBottom="12dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

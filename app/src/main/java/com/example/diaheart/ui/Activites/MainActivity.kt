@@ -9,6 +9,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.diaheart.R
 import com.example.diaheart.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.LabelVisibilityMode
 
 class MainActivity : AppCompatActivity() {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater)}
@@ -21,6 +22,9 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.NavHost) as NavHostFragment
         val navController = navHostFragment.navController
+        bottomNav.setupWithNavController(navController)
+        // Ensure the label visibility mode is set to labeled or as desired
+        bottomNav.labelVisibilityMode = LabelVisibilityMode.LABEL_VISIBILITY_LABELED
         bottomNav.setupWithNavController(navController)
 
 

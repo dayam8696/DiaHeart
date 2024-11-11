@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:inputType="phone"
         android:hint="Mobile Number"
-        android:maxLength="10"
+        android:maxLength="13"
         android:padding="10dp"
         android:background="@android:drawable/edit_text"
         android:layout_marginBottom="24dp" />
@@ -48,5 +48,14 @@
         android:backgroundTint="#FF6F00"
         android:padding="12dp"
         android:elevation="4dp" />
+
+    <Button
+        android:id="@+id/btnSelectContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Select From Contacts"
+        android:layout_marginBottom="16dp" />
+
 
 </LinearLayout>

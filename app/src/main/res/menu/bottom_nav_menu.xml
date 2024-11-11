@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/homeFragment"
-
+        android:id="@+id/homeFragment2"
+        android:icon="@drawable/baseline_home_24"
         android:iconTint="#0E5F0E"
-        android:title="Home"/>
+        android:title="Home" />
 
     <item
-        android:id="@+id/diseaseDetectionFragment"
-
-        android:iconTint="#0E5F0E"
-        android:title="DP"/>
-
-
-    <item
-        android:id="@+id/weatherFragment"
-
-        android:iconTint="#0E5F0E"
-        android:title="Weather"/>
+        android:id="@+id/nearByHospitalFragment"
+        android:icon="@drawable/baseline_local_hospital_24"
+    android:iconTint="#0E5F0E"
+    android:title="HS" />
 </menu>
