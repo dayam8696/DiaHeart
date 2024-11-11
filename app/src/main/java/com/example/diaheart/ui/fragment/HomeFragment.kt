@@ -36,6 +36,9 @@ class HomeFragment :BaseFragment() {
             findNavController().navigate(R.id.action_homeFragment2_to_blogFragment)
 
         }
+        binding.btnEmergency.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment2_to_emergencyDetailsFragment)
+        }
 
 
     }

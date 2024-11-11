@@ -19,7 +19,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp" />
 
-
+    <!-- Diabetes Risk Value TextView -->
     <TextView
         android:id="@+id/diabetesRiskValue"
         android:layout_width="wrap_content"
@@ -31,7 +31,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="8dp" />
 
-    <!-- Button to allow the user to predict again -->
+    <!-- Predict Again Button -->
     <Button
         android:id="@+id/btnPredictAgain"
         android:layout_width="wrap_content"
@@ -43,4 +43,16 @@
         android:textColor="@android:color/white"
         android:padding="12dp"
         android:layout_marginBottom="16dp" />
+
+    <!-- Emergency Button -->
+    <Button
+        android:id="@+id/btnEmergency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Emergency"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"
+        android:padding="12dp" />
 </LinearLayout>

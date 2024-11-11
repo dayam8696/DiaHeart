@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_homeFragment2_to_blogFragment"
             app:destination="@id/blogFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_emergencyDetailsFragment"
+            app:destination="@id/emergencyDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/diabeties"
@@ -68,4 +71,9 @@
         android:name="com.example.diaheart.ui.fragment.BlogFragment"
         android:label="BlogFragment"
         tools:layout="@layout/blog_fragment"/>
+    <fragment
+        android:id="@+id/emergencyDetailsFragment"
+        android:name="com.example.diaheart.ui.fragment.EmergencyDetailsFragment"
+        android:label="EmergencyDetailsFragment"
+        tools:layout="@layout/emergency_details_fragment"/>
 </navigation>

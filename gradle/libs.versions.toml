@@ -19,6 +19,7 @@ picasso = "2.8"
 tensorflowLiteSupport = "0.1.0"
 tensorflowLiteMetadata = "0.1.0"
 tensorflowLiteGpu = "2.3.0"
+playServicesLocation = "21.3.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -59,6 +60,7 @@ tensorflow-lite-metadata = { group = "org.tensorflow", name = "tensorflow-lite-m
 tensorflow-lite-gpu = { group = "org.tensorflow", name = "tensorflow-lite-gpu", version.ref = "tensorflowLiteGpu" }
 # Add this under the appropriate section (e.g., [libraries])
 androidx-cardview = { module = "androidx.cardview:cardview", version = "1.0.0" }
+play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
 
 
 [plugins]
