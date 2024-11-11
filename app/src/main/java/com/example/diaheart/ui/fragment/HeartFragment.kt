@@ -1,5 +1,6 @@
 package com.example.diaheart.ui.fragment
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -30,6 +31,59 @@ class HeartFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.infoAge.setOnClickListener {
+            showInfoDialog("Age", "Enter your age in years. (Normal: Adults 20-80 years)")
+        }
+
+        binding.infoSex.setOnClickListener {
+            showInfoDialog("Sex", "Enter 1 for Male, 0 for Female.")
+        }
+
+        binding.infoCp.setOnClickListener {
+            showInfoDialog("Chest Pain Type", "Enter 0 for typical angina, 1 for atypical angina, 2 for non-anginal pain, and 3 for asymptomatic. (Typical angina is usually in the range of 0-1)")
+        }
+
+        binding.infoTrtbps.setOnClickListener {
+            showInfoDialog("Resting Blood Pressure", "Enter your resting blood pressure in mm Hg. (Normal range: 90-120 mm Hg systolic)")
+        }
+
+        binding.infoChol.setOnClickListener {
+            showInfoDialog("Cholesterol", "Enter your cholesterol level in mg/dl. (Desirable: Less than 200 mg/dl, borderline high: 200-239 mg/dl, high: 240 mg/dl or higher)")
+        }
+
+        binding.infoFbs.setOnClickListener {
+            showInfoDialog("Fasting Blood Sugar", "Enter 1 if your fasting blood sugar > 120 mg/dl, otherwise enter 0. (Normal: less than 100 mg/dl, prediabetes: 100-125 mg/dl, diabetes: 126 mg/dl or higher)")
+        }
+
+        binding.infoRestecg.setOnClickListener {
+            showInfoDialog("Resting ECG", "Enter 0 for normal, 1 for having ST-T wave abnormality, and 2 for showing probable or definite left ventricular hypertrophy.")
+        }
+
+        binding.infoThalachh.setOnClickListener {
+            showInfoDialog("Max Heart Rate", "Enter your maximum heart rate achieved. (Normal: 60-100 bpm resting heart rate, varies based on age and fitness level)")
+        }
+
+        binding.infoExng.setOnClickListener {
+            showInfoDialog("Exercise Induced Angina", "Enter 1 if you experience exercise-induced angina, otherwise enter 0.")
+        }
+
+        binding.infoOldpeak.setOnClickListener {
+            showInfoDialog("ST Depression", "Enter the value of ST depression induced by exercise relative to rest. (Typically, values should be below 2.0)")
+        }
+
+        binding.infoSlp.setOnClickListener {
+            showInfoDialog("Slope of ST Segment", "Enter 0 for upsloping, 1 for flat, and 2 for downsloping ST segment.")
+        }
+
+        binding.infoCaa.setOnClickListener {
+            showInfoDialog("Number of Major Vessels", "Enter the number of major vessels (0-3) colored by fluoroscopy. (Normal is generally 0)")
+        }
+
+        binding.infoThall.setOnClickListener {
+            showInfoDialog("Thalassemia", "Enter 0 for normal, 1 for fixed defect, 2 for reversible defect, and 3 for any other condition.")
+        }
+
+
 
         binding.submitButton.setOnClickListener {
             try {
@@ -146,4 +200,12 @@ class HeartFragment : BaseFragment() {
     object HeartResult {
         var percentage = " "
     }
+    private fun showInfoDialog(title: String, message: String) {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle(title)
+        builder.setMessage(message)
+        builder.setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+        builder.create().show()
+    }
+
 }

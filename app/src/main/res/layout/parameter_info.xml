@@ -10,6 +10,7 @@
 
     <!-- Card 1: Know Your Diabetes Parameter -->
     <androidx.cardview.widget.CardView
+        android:id="@+id/diab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -37,6 +38,7 @@
 
     <!-- Card 2: Know Your Heart Parameters -->
     <androidx.cardview.widget.CardView
+        android:id="@+id/heart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"

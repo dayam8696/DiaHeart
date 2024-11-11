@@ -12,7 +12,6 @@
         android:layout_marginTop="30dp"
         android:orientation="vertical">
 
-
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,13 +27,28 @@
                 android:orientation="vertical">
 
                 <!-- Age -->
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Age"
-                    android:textSize="16sp"
-                    android:textColor="#333333"
-                    android:layout_marginBottom="4dp" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Age"
+                        android:textSize="16sp"
+                        android:textColor="#333333" />
+
+                    <ImageView
+                        android:id="@+id/info_age"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_info_24"
+                        android:contentDescription="Info Icon" />
+                </LinearLayout>
 
                 <EditText
                     android:id="@+id/age"
@@ -46,13 +60,28 @@
                     android:layout_marginBottom="12dp" />
 
                 <!-- Sex -->
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sex"
-                    android:textSize="16sp"
-                    android:textColor="#333333"
-                    android:layout_marginBottom="4dp" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Sex"
+                        android:textSize="16sp"
+                        android:textColor="#333333" />
+
+                    <ImageView
+                        android:id="@+id/info_sex"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_info_24"
+                        android:contentDescription="Info Icon" />
+                </LinearLayout>
 
                 <EditText
                     android:id="@+id/sex"
@@ -64,13 +93,28 @@
                     android:layout_marginBottom="12dp" />
 
                 <!-- Chest Pain Type -->
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Chest Pain Type"
-                    android:textSize="16sp"
-                    android:textColor="#333333"
-                    android:layout_marginBottom="4dp" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Chest Pain Type"
+                        android:textSize="16sp"
+                        android:textColor="#333333" />
+
+                    <ImageView
+                        android:id="@+id/info_cp"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_info_24"
+                        android:contentDescription="Info Icon" />
+                </LinearLayout>
 
                 <EditText
                     android:id="@+id/cp"
@@ -82,13 +126,28 @@
                     android:layout_marginBottom="12dp" />
 
                 <!-- Resting Blood Pressure -->
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Resting Blood Pressure"
-                    android:textSize="16sp"
-                    android:textColor="#333333"
-                    android:layout_marginBottom="4dp" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Resting Blood Pressure"
+                        android:textSize="16sp"
+                        android:textColor="#333333" />
+
+                    <ImageView
+                        android:id="@+id/info_trtbps"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_info_24"
+                        android:contentDescription="Info Icon" />
+                </LinearLayout>
 
                 <EditText
                     android:id="@+id/trtbps"
@@ -100,13 +159,28 @@
                     android:layout_marginBottom="12dp" />
 
                 <!-- Cholesterol -->
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Cholesterol"
-                    android:textSize="16sp"
-                    android:textColor="#333333"
-                    android:layout_marginBottom="4dp" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Cholesterol"
+                        android:textSize="16sp"
+                        android:textColor="#333333" />
+
+                    <ImageView
+                        android:id="@+id/info_chol"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_info_24"
+                        android:contentDescription="Info Icon" />
+                </LinearLayout>
 
                 <EditText
                     android:id="@+id/chol"
@@ -118,13 +192,28 @@
                     android:layout_marginBottom="12dp" />
 
                 <!-- Fasting Blood Sugar -->
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Fasting Blood Sugar"
-                    android:textSize="16sp"
-                    android:textColor="#333333"
-                    android:layout_marginBottom="4dp" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Fasting Blood Sugar"
+                        android:textSize="16sp"
+                        android:textColor="#333333" />
+
+                    <ImageView
+                        android:id="@+id/info_fbs"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_info_24"
+                        android:contentDescription="Info Icon" />
+                </LinearLayout>
 
                 <EditText
                     android:id="@+id/fbs"
@@ -136,13 +225,28 @@
                     android:layout_marginBottom="12dp" />
 
                 <!-- Resting ECG -->
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Resting ECG"
-                    android:textSize="16sp"
-                    android:textColor="#333333"
-                    android:layout_marginBottom="4dp" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Resting ECG"
+                        android:textSize="16sp"
+                        android:textColor="#333333" />
+
+                    <ImageView
+                        android:id="@+id/info_restecg"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_info_24"
+                        android:contentDescription="Info Icon" />
+                </LinearLayout>
 
                 <EditText
                     android:id="@+id/restecg"
@@ -154,13 +258,28 @@
                     android:layout_marginBottom="12dp" />
 
                 <!-- Max Heart Rate -->
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Max Heart Rate"
-                    android:textSize="16sp"
-                    android:textColor="#333333"
-                    android:layout_marginBottom="4dp" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Max Heart Rate"
+                        android:textSize="16sp"
+                        android:textColor="#333333" />
+
+                    <ImageView
+                        android:id="@+id/info_thalachh"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_info_24"
+                        android:contentDescription="Info Icon" />
+                </LinearLayout>
 
                 <EditText
                     android:id="@+id/thalachh"
@@ -172,13 +291,28 @@
                     android:layout_marginBottom="12dp" />
 
                 <!-- Exercise Induced Angina -->
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Exercise Induced Angina"
-                    android:textSize="16sp"
-                    android:textColor="#333333"
-                    android:layout_marginBottom="4dp" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Exercise Induced Angina"
+                        android:textSize="16sp"
+                        android:textColor="#333333" />
+
+                    <ImageView
+                        android:id="@+id/info_exng"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_info_24"
+                        android:contentDescription="Info Icon" />
+                </LinearLayout>
 
                 <EditText
                     android:id="@+id/exng"
@@ -190,13 +324,28 @@
                     android:layout_marginBottom="12dp" />
 
                 <!-- ST Depression -->
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ST Depression"
-                    android:textSize="16sp"
-                    android:textColor="#333333"
-                    android:layout_marginBottom="4dp" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="ST Depression"
+                        android:textSize="16sp"
+                        android:textColor="#333333" />
+
+                    <ImageView
+                        android:id="@+id/info_oldpeak"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_info_24"
+                        android:contentDescription="Info Icon" />
+                </LinearLayout>
 
                 <EditText
                     android:id="@+id/oldpeak"
@@ -208,13 +357,28 @@
                     android:layout_marginBottom="12dp" />
 
                 <!-- Slope of ST Segment -->
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Slope of ST Segment"
-                    android:textSize="16sp"
-                    android:textColor="#333333"
-                    android:layout_marginBottom="4dp" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Slope of ST Segment"
+                        android:textSize="16sp"
+                        android:textColor="#333333" />
+
+                    <ImageView
+                        android:id="@+id/info_slp"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_info_24"
+                        android:contentDescription="Info Icon" />
+                </LinearLayout>
 
                 <EditText
                     android:id="@+id/slp"
@@ -226,13 +390,28 @@
                     android:layout_marginBottom="12dp" />
 
                 <!-- Number of Major Vessels -->
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Number of Major Vessels"
-                    android:textSize="16sp"
-                    android:textColor="#333333"
-                    android:layout_marginBottom="4dp" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Number of Major Vessels"
+                        android:textSize="16sp"
+                        android:textColor="#333333" />
+
+                    <ImageView
+                        android:id="@+id/info_caa"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_info_24"
+                        android:contentDescription="Info Icon" />
+                </LinearLayout>
 
                 <EditText
                     android:id="@+id/caa"
@@ -244,13 +423,28 @@
                     android:layout_marginBottom="12dp" />
 
                 <!-- Thalassemia -->
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Thalassemia"
-                    android:textSize="16sp"
-                    android:textColor="#333333"
-                    android:layout_marginBottom="4dp" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Thalassemia"
+                        android:textSize="16sp"
+                        android:textColor="#333333" />
+
+                    <ImageView
+                        android:id="@+id/info_thall"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_info_24"
+                        android:contentDescription="Info Icon" />
+                </LinearLayout>
 
                 <EditText
                     android:id="@+id/thall"

@@ -65,7 +65,14 @@
         android:id="@+id/parameterInfo"
         android:name="com.example.diaheart.ui.fragment.ParameterInfo"
         android:label="ParameterInfo"
-        tools:layout="@layout/parameter_info"/>
+        tools:layout="@layout/parameter_info">
+        <action
+            android:id="@+id/action_parameterInfo_to_diabetiesParaInfoFragment"
+            app:destination="@id/diabetiesParaInfoFragment" />
+        <action
+            android:id="@+id/action_parameterInfo_to_heartParaInfoFragment"
+            app:destination="@id/heartParaInfoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/blogFragment"
         android:name="com.example.diaheart.ui.fragment.BlogFragment"
@@ -81,4 +88,14 @@
         android:name="com.example.diaheart.ui.fragment.NearByHospitalFragment"
         android:label="NearByHospitalFragment"
         tools:layout="@layout/near_by_hospital_fragment"/>
+    <fragment
+        android:id="@+id/diabetiesParaInfoFragment"
+        android:name="com.example.diaheart.ui.fragment.DiabetiesParaInfoFragment"
+        android:label="DiabetiesParaInfoFragment"
+        tools:layout="@layout/diabeties_para_info_fragment"/>
+    <fragment
+        android:id="@+id/heartParaInfoFragment"
+        android:name="com.example.diaheart.ui.fragment.HeartParaInfoFragment"
+        android:label="HeartParaInfoFragment"
+        tools:layout="@layout/heart_parameter_fragment"/>
 </navigation>
