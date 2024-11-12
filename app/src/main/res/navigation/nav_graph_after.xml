@@ -98,4 +98,9 @@
         android:name="com.example.diaheart.ui.fragment.HeartParaInfoFragment"
         android:label="HeartParaInfoFragment"
         tools:layout="@layout/heart_parameter_fragment"/>
+    <fragment
+        android:id="@+id/chatBotFragment"
+        android:name="com.example.diaheart.ui.fragment.ChatBotFragment"
+        android:label="ChatBotFragment"
+        tools:layout="@layout/chatbot_fragment"/>
 </navigation>

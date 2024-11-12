@@ -10,5 +10,11 @@
         android:id="@+id/nearByHospitalFragment"
         android:icon="@drawable/baseline_local_hospital_24"
     android:iconTint="#0E5F0E"
-    android:title="HS" />
+    android:title="Hospitals" />
+
+    <item
+        android:id="@+id/chatBotFragment"
+        android:icon="@drawable/baseline_chat_bubble_24"
+        android:iconTint="#0E5F0E"
+        android:title="ChatBot" />
 </menu>
