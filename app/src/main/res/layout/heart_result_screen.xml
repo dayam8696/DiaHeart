@@ -43,5 +43,16 @@
         android:textColor="@android:color/white"
         android:padding="12dp"
         android:layout_marginBottom="16dp" />
+    <!-- Emergency Button -->
+    <Button
+        android:id="@+id/btnEmergency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Emergency"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"
+        android:padding="12dp" />
 
 </LinearLayout>
