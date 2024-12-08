@@ -39,7 +39,7 @@ DiaHeart is an AI-powered mobile application designed to help users effectively 
 
 ## **Screenshots**
 - **Home Screen**  
-  <img src="screenshots/HomeScreen.jpg" alt="Home Screen" width="600"/>
+  <img src="screenshots/HomeScreen.jpg" alt="Home Screen" width="200"/>
 
 - **Diabetes Prediction Screen**  
   <img src="screenshots/diabetes_prediction_screen.png" alt="Diabetes Prediction" width="600"/>
