@@ -38,26 +38,36 @@ DiaHeart is an AI-powered mobile application designed to help users effectively 
 ---
 
 ## **Screenshots**
-- **Home Screen**  
-  <img src="screenshots/HomeScreen.jpg" alt="Home Screen" width="200"/>
 
-- **Diabetes Prediction Screen**  
-  <img src="screenshots/diabetes_prediction_screen.png" alt="Diabetes Prediction" width="600"/>
+<table>
+  <tr>
+    <td><img src="screenshots/HomeScreen.jpg" alt="Home Screen" width="200"/></td>
+    <td><img src="screenshots/diabetes_prediction_screen.png" alt="Diabetes Prediction" width="200"/></td>
+    <td><img src="screenshots/heart_attack_prediction_screen.png" alt="Heart Attack Prediction" width="200"/></td>
+  </tr>
+  <tr>
+    <td>Home Screen</td>
+    <td>Diabetes Prediction Screen</td>
+    <td>Heart Attack Prediction Screen</td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/emergency_contact_screen.png" alt="Emergency Contact" width="200"/></td>
+    <td><img src="screenshots/nearby_hospitals_locator_screen.png" alt="Nearby Hospitals" width="200"/></td>
+    <td><img src="screenshots/chatbot_screen.png" alt="AI Chatbot" width="200"/></td>
+  </tr>
+  <tr>
+    <td>Emergency Contact Screen</td>
+    <td>Nearby Hospitals Locator Screen</td>
+    <td>AI Chatbot Screen</td>
+  </tr>
+  <tr>
+    <td colspan="3"><img src="screenshots/know_your_parameters_screen.png" alt="Know Your Parameters" width="200"/></td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center">Know Your Parameters Screen</td>
+  </tr>
+</table>
 
-- **Heart Attack Prediction Screen**  
-  <img src="screenshots/heart_attack_prediction_screen.png" alt="Heart Attack Prediction" width="600"/>
-
-- **Emergency Contact Screen**  
-  <img src="screenshots/emergency_contact_screen.png" alt="Emergency Contact" width="600"/>
-
-- **Nearby Hospitals Locator Screen**  
-  <img src="screenshots/nearby_hospitals_locator_screen.png" alt="Nearby Hospitals" width="600"/>
-
-- **AI Chatbot Screen**  
-  <img src="screenshots/chatbot_screen.png" alt="AI Chatbot" width="600"/>
-
-- **Know Your Parameters Screen**  
-  <img src="screenshots/know_your_parameters_screen.png" alt="Know Your Parameters" width="600"/>
 
 
 ---
