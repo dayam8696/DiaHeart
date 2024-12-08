@@ -12,6 +12,6 @@
         android:layout_height="match_parent"
         android:src="@drawable/logodiaheart"
         android:contentDescription="App Logo"
-        android:scaleType="center" />
+        android:scaleType="centerInside" />
 
 </RelativeLayout>
