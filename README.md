@@ -74,7 +74,6 @@ DiaHeart is an AI-powered mobile application designed to help users effectively 
 
 ## **Technologies Used**
 - **Frontend:** Android (Java/Kotlin)
-- **Backend:** Firebase / Cloud Hosting for AI models
 - **Machine Learning Frameworks:** TensorFlow Lite
 - **APIs:** Google Maps API for location services
 - **Algorithms:**
