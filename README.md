@@ -39,25 +39,26 @@ DiaHeart is an AI-powered mobile application designed to help users effectively 
 
 ## **Screenshots**
 - **Home Screen**  
-  ![Home Screen](screenshots/HomeScreen.jpg)
+  <img src="screenshots/HomeScreen.jpg" alt="Home Screen" width="600"/>
 
 - **Diabetes Prediction Screen**  
-  ![Diabetes Prediction](./screenshots/diabetes_prediction_screen.png)
+  <img src="screenshots/diabetes_prediction_screen.png" alt="Diabetes Prediction" width="600"/>
 
 - **Heart Attack Prediction Screen**  
-  ![Heart Attack Prediction](./screenshots/heart_attack_prediction_screen.png)
+  <img src="screenshots/heart_attack_prediction_screen.png" alt="Heart Attack Prediction" width="600"/>
 
 - **Emergency Contact Screen**  
-  ![Emergency Contact](./screenshots/emergency_contact_screen.png)
+  <img src="screenshots/emergency_contact_screen.png" alt="Emergency Contact" width="600"/>
 
 - **Nearby Hospitals Locator Screen**  
-  ![Nearby Hospitals](./screenshots/nearby_hospitals_locator_screen.png)
+  <img src="screenshots/nearby_hospitals_locator_screen.png" alt="Nearby Hospitals" width="600"/>
 
 - **AI Chatbot Screen**  
-  ![AI Chatbot](./screenshots/chatbot_screen.png)
+  <img src="screenshots/chatbot_screen.png" alt="AI Chatbot" width="600"/>
 
 - **Know Your Parameters Screen**  
-  ![Know Your Parameters](./screenshots/know_your_parameters_screen.png)
+  <img src="screenshots/know_your_parameters_screen.png" alt="Know Your Parameters" width="600"/>
+
 
 ---
 
@@ -121,5 +122,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## **Acknowledgments**
 Special thanks to:
 - **Ms. Neha** (Supervisor) for her invaluable guidance.
-- **Jamia Hamdard University** for providing the platform to bring this idea to life.
+-
 
